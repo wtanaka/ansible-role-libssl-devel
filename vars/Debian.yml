@@ -1,2 +1,3 @@
 ---
-package_name: libssl-dev
+package_names:
+- libssl-dev
