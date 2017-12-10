@@ -9,15 +9,4 @@
 - include: RedHat.yml
   when: ansible_os_family == 'RedHat'
 
-- name: install libffi with default package manager
-  action: "{{backcompat_pkg_mgr}} name={{package_name}}"
-  sudo: yes
-  when: backcompat_pkg_mgr == "yum" or backcompat_pkg_mgr == "apt"
-
-# Use command since dnf was only added as a module in ansible 1.9.0
-#- name: install libffi devel with dnf
-#  command: dnf install -y {{package_name}}
-#  args:
-#    creates: /usr/include/ffi.h
-#  sudo: yes
-#  when: backcompat_pkg_mgr == "dnf"
+- include: install_package_names.yml

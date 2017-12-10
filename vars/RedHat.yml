@@ -1,2 +1,3 @@
 ---
-package_name: openssl-devel
+package_names:
+- openssl-devel

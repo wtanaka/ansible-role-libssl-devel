@@ -2,3 +2,5 @@
 - name: apt-get update
   apt: update_cache=true cache_valid_time=3600
   sudo: yes
+  register: result_apt_update
+  until: result_apt_update|success
